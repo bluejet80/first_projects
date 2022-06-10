@@ -1,0 +1,452 @@
+//function --------------------------------------------------
+
+function greet()
+{
+    console.log("hello world");
+}
+
+greet();
+greet();
+greet();
+
+
+
+//function return and input value -------------------------------
+
+function greet(user)
+{
+    return `hello ${user}!!`
+}
+
+let user = "jarett";
+let str = greet(user);
+
+console.log(str);
+
+//function expression -------------------------------
+
+let add = function(num1, num2)
+{
+    return num1 + num2;
+}
+let result = add(5,6)
+
+console.log(result);
+
+
+//local and global variables --------------------------------
+
+let user = "jarett";
+
+function greet(u)
+{
+    console.log(user);
+    return `hello ${u}!!`
+}
+
+let str = greet(user);
+
+console.log(str);
+
+function add(num1,num2,num3=1)
+{
+    console.log(num1,num2,num3);
+    return num1 + num2 + num3;
+}
+
+let addition = add(5,6);
+console.log(addition);
+
+
+
+// this is a Constructor Function -------------------------------------------
+
+function Alien(name, tech){
+    this.name = name;
+    this.tech = tech;
+	
+	this.work = function(){
+		console.log("Solving bugs for 12 hours");
+	}
+}
+
+let alien1 = new Alien('jarett', 'JS');
+let alien2 = new Alien('mike', 'Java');
+
+alien1.tech = 'Blockchain' // you can change the variable of one 
+                            // without changing the other
+
+console.log(alien1);
+console.log(alien2);
+
+alien1.work();
+
+
+// Arrow function -------------------------------------------
+
+
+let greet = function(){
+    console.log("hello world");
+    return 1;
+}
+
+console.log(greet());
+
+let meet = (name) => {
+    console.log(`My name is ${name}`);
+    return 1;
+}
+
+console.log(meet("jarett")); 
+
+let add = (num1,num2) => num1 + num2;  // one line form
+
+let sum = add
+let result = sum(7,32)
+console.log(result);
+
+
+// object methods--------------------------------
+
+let laptop = {
+    cpu: "i9",
+    ram: 16,
+    brand: "HP",
+    greet: function(){
+        console.log("This computer is fast");
+    }
+}
+
+laptop.greet()
+
+// this keyword -------------------------------
+
+let laptop1 = {
+    cpu: "i7",
+    ram: 16,
+    brand: "Asus",
+
+    compare: function(other){
+        if(this.cpu > other.cpu)
+            console.log(this);
+        else
+            console.log(other);
+    },
+
+    getConfig: function(){
+        
+        console.log(this.cpu);
+    }
+}
+
+laptop1.getConfig()
+
+let laptop2 = {
+    cpu: "i5",
+    ram: 32,
+    brand: "HP",
+    getConfig: function(){
+        
+        console.log(this.brand);
+    }
+}
+
+laptop2.getConfig()
+laptop1.compare(laptop2) // compare two objects
+
+
+// creating array and fetching-----------------------
+
+let values = [];
+
+values.push(5);
+values.push(7);
+values.push("jerry", 56, "dog");
+
+console.log(values);
+console.log(values[3]);
+
+//function witnin an array
+let data = ['jarett', 76, {school:"Haven"}, 
+function(){console.log("you went to school!");},500]
+
+console.log(data);
+data[3](); //"()" call function
+
+///Array Methods ------------------------------
+console.log("new section...");
+
+let data1 = [6,10,4,9,1];
+console.log(data1.push(7));
+console.log(data1);
+console.log(data1.pop());
+console.log(data1);
+console.log(data1.shift());
+console.log(data1);
+console.log(data1.unshift(44));
+console.log(data1);
+console.log(data1.splice(3));
+console.log(data1);
+
+// push adds value to the end
+// pop removes a value from the end
+// shift removes from the begining
+// splice [first arg]index, [second arg]number to remove,[third arg]numbers to add
+
+// for loop w array-----------------------------
+
+let nums = [];
+
+nums[0] = 5;
+nums[99] = 9;
+
+console.log(nums);
+
+for(let n of nums){ // print all items in array
+    console.log(n);
+}
+
+for(let key in nums){ // print indexs in array
+    console.log(nums[key]);
+}
+
+
+
+
+
+
+
+// Arithmetic Operators -------------------------------------------
+
+
+let num1 = 4
+let num2 = 2
+let num3 = 5
+let num4 = true
+let num5 = true
+
+let result = num1 +  num2 //addition
+console.log("add");
+console.log(result);
+
+result = num1 *  num2 //multiply
+console.log("multiply");
+console.log(result);
+
+result = num1 /  num2 //divide
+console.log("divide");
+console.log(result);
+
+result = num2 %  num3 // remainder
+console.log("remainder");
+console.log(result, typeof result);
+
+result = num4 +  num5 // boolean 1 + 1 =2
+console.log("boolean");
+console.log(result, typeof result);
+
+// post and pre incrment
+
+let num = 4
+let x = num++  // post increment
+console.log(x, num);
+
+num = 4
+x = ++num  // pre increment
+console.log(x, num);
+
+num = 4
+result = Math.pow(4,3)
+console.log(result);
+
+result = 4 ** 3
+console.log(result);
+
+//
+
+ // conditional operators -------------------------------------------
+
+ let num1 = 6;
+ let num2 = 4;
+
+ let result = num1 > num2;
+
+ if(result){
+     console.log("num1 is greater");
+ }
+
+ console.log("Bye..");
+
+ // conditional operators ver2
+
+ let num1 = 3;
+ let num2 = 45;
+ let num3 = 10
+
+ if(num1 > num2 && num1 > num3)
+     console.log("num1 is greatest");
+else if (num2 > num3)
+    console.log("num2 is greatest");
+else
+    console.log("num3 is greatest");
+
+
+ console.log("Bye..");
+ 
+ 
+ // Ternary Operator -------------------------------------------
+
+let num = 12
+let result
+
+if(num%2===0)
+    result = "Even"
+else
+    result = "Odd"
+
+console.log(result);
+
+// tenery operatore ?:
+
+result = num%2===0 ? "even" : "odd"
+console.log(result);
+
+//Switch Statement ---------------------------------------------------
+
+// Mon - 7am
+// tue - thurs - 4am
+// fri - 9am
+// sat - sun - 8am
+
+let day = "Holiday"
+
+switch(day){
+    case "Monday":
+        console.log("7am");
+        break;
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+        console.log("4am");
+        break;
+    case "Friday":
+        console.log("9am");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("8am");
+        break;
+    default:
+        console.log("sleep");
+}
+console.log("bye...");
+
+// Template literal-----------------------------------------------
+
+let num1 = 7
+let num2 = 4
+let result = num1 + num2
+
+console.log("The addition of " + num1 + " and " + num2 + " is " + result);
+
+console.log(`The addition of ${num1} and ${num2} is ${result}`);
+
+console.log("My name is \nJarett Young");
+console.log(`My name is 
+Jarett Young`);
+
+
+// Loops -------------------------------------------------------
+// initialize, condition, increment
+
+let i = 1;
+
+while(i<=5) // while loop
+{
+    console.log("Hi",i);
+    i++
+}
+
+console.log(i);
+
+do                      // do while loop
+{
+    console.log("Hi",i);
+    i++
+}while(i<=5)
+
+for(let i=1;i<=5;i++) // dont have to initialize in the loop
+{
+    console.log("Hi",i);
+
+    for(let j=1;j<=5;j++)
+        console.log("hello");
+}
+
+for(let i=1;i<=100;i++)  //print values divisible by 3
+{
+    if(i%3===0)
+        console.log(i);
+}
+
+let num = 123456 //print individual numbers
+
+console.log(num%10); // prints last number
+num = parseInt(num /10) // removes last number
+
+num = 123456
+
+while(num>0)
+{
+    console.log(num%10);
+    num = parseInt(num / 10)
+}
+
+
+
+// Objects -------------------------------------------------------
+
+let alien = {
+    name: "jarett",
+    tech: "JS",
+    laptop: {
+        cpu: "i7",
+        ram: 64,
+        brand: "Asus",
+
+    }
+}
+
+console.log(alien);
+
+console.log(alien.laptop);
+
+console.log(alien.laptop.brand);
+
+console.log(alien.laptop.brand.length);
+
+console.log(alien.laptop);
+
+delete alien.tech
+
+console.log(alien);
+
+
+// for in loop --------------------------------------
+
+let alien = {
+    name: "jarett",
+    tech: "JS",
+    laptop: {
+        cpu: "i7",
+        ram: 64,
+        brand: "Asus",
+
+    }
+}
+
+for(let key in alien) {
+    console.log(key, alien[key]);
+}
+
+
